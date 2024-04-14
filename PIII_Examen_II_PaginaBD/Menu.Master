@@ -27,28 +27,28 @@
             </div>
             <nav class="navbar">
                 <ul class="navbar__menu">
-                    <li class="navbar__item">
+                    <li id="navbar__itemInicio" class="navbar__item" runat="server">
                         <a href="Inicio.aspx" class="navbar__link"><i data-feather="Inicio"></i><span>Inicio</span> </a>
                     </li>
-                    <li class="navbar__item">
+                    <li id="navbar__itemEquipos" class="navbar__item" runat="server">
                         <a href="Equipos.aspx" class="navbar__link"><i data-feather="message-square"></i><span>Equipos</span></a>
                     </li>
-                    <li class="navbar__item">
+                    <li id="navbar__itemTecnicos" class="navbar__item" runat="server">
                         <a href="Tecnicos.aspx" class="navbar__link"><i data-feather="users"></i><span>Tecnicos</span></a>
                     </li>
-                    <li class="navbar__item">
+                    <li id="navbar__itemUsuarios" class="navbar__item" runat="server">
                         <a href="Usuarios.aspx" class="navbar__link"><i data-feather="folder"></i><span>USUARIOS</span></a>
                     </li>
-                    <li class="navbar__item">
+                    <li id="navbar__itemReparaciones" class="navbar__item" runat="server">
                         <a href="Reparaciones.aspx" class="navbar__link"><i data-feather="archive"></i><span>Reparaciones</span></a>
                     </li>
-                    <li class="navbar__item">
+                    <li id="navbar__itemUsuariosSistema" class="navbar__item" runat="server">
                         <a href="UsuariosSistema.aspx" class="navbar__link"><i data-feather="archive"></i><span>ACCESOS</span></a>
                     </li>
-                    <li class="navbar__item">
+                    <li id="navbar__itemRoles" class="navbar__item" runat="server">
                         <a href="Roles.aspx" class="navbar__link"><i data-feather="archive"></i><span>Roles</span></a>
                     </li>
-                    <li class="navbar__item">
+                    <li  id="navbar__itemReportes" class="navbar__itemReportes" runat="server">
                         <a href="Reportes.aspx" class="navbar__link"><i data-feather="archive"></i><span>Reportes</span></a>
                     </li>
                 </ul>

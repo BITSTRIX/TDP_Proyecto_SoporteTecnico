@@ -164,7 +164,7 @@ namespace PIII_Examen_II_PaginaBD.pages
         public void Limpiar()
         {
             txtIDReparacion.Text = string.Empty;
-            txtFecha.Text = string.Empty;
+            txtFecha = null;
             DropListEquipos.SelectedValue = null;
             DropListEstado.SelectedValue = null;
             LlenarTablaReparaciones();
@@ -178,9 +178,10 @@ namespace PIII_Examen_II_PaginaBD.pages
         protected void btnAgregarReparacion_Click(object sender, EventArgs e)
         {
 
-            if (txtFecha.Text != string.Empty && DropListEquipos.SelectedValue != null)
+            if (txtFecha.Value != string.Empty && DropListEquipos.SelectedValue != null)
             {
-                int resultado = clases.ClaseReparaciones.AgregarReparacion(int.Parse(DropListEquipos.SelectedValue), Convert.ToDateTime(txtFecha.Text), Convert.ToChar(DropListEstado.SelectedValue));
+                string fechaSeleccionada = txtFecha.Value;
+                int resultado = clases.ClaseReparaciones.AgregarReparacion(int.Parse(DropListEquipos.SelectedValue), Convert.ToDateTime(fechaSeleccionada), Convert.ToChar(DropListEstado.SelectedValue));
                 if (resultado > 0)
                 {
                     Alertas("Reparacion registrada correctamente.");
@@ -215,7 +216,8 @@ namespace PIII_Examen_II_PaginaBD.pages
                     ClaseReparaciones DatoExtraido = Lista[0];
                     txtIDReparacion.Text = DatoExtraido.idReparacion.ToString();
                     DropListEquipos.Text = DatoExtraido.idEquipo.ToString();
-                    txtFecha.Text = DatoExtraido.Fecha.ToString();
+                    String fechaFormateada = DatoExtraido.Fecha.ToString("dd/MM/yyyy");
+                    txtFecha.Value = fechaFormateada;
                     DropListEstado.Text = DatoExtraido.Estado.ToString();
                 }
 
@@ -229,9 +231,9 @@ namespace PIII_Examen_II_PaginaBD.pages
 
         protected void btnActualizarReparacion_Click(object sender, EventArgs e)
         {
-            if (txtIDReparacion.Text != string.Empty && txtFecha.Text != string.Empty && DropListEquipos.Text != string.Empty)
+            if (txtIDReparacion.Text != string.Empty && txtFecha.Value != string.Empty && DropListEquipos.Text != string.Empty)
             {
-                int resultado = clases.ClaseReparaciones.ModificarReparacion(Convert.ToInt32(txtIDReparacion.Text), int.Parse(DropListEquipos.SelectedValue), Convert.ToDateTime(txtFecha.Text), Convert.ToChar(DropListEstado.SelectedValue));
+                int resultado = clases.ClaseReparaciones.ModificarReparacion(Convert.ToInt32(txtIDReparacion.Text), int.Parse(DropListEquipos.SelectedValue), Convert.ToDateTime(txtFecha.Value), Convert.ToChar(DropListEstado.SelectedValue));
                 if (resultado > 0)
                 {
                     Alertas("Reparacion modificada correctamente.");

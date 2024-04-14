@@ -49,7 +49,8 @@
                     <tr>
                         <td class="auto-style5"><strong>Fecha de Solicitud:</strong></td>
                         <td class="auto-style3">
-                            <asp:TextBox ID="txtFecha" runat="server" Height="30px" Width="249px"></asp:TextBox>
+                            <input type="date" name="txtFecha" id="txtFecha" runat="server">
+
                         </td>
                     </tr>
                     <tr>
